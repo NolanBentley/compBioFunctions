@@ -4,22 +4,32 @@
 \alias{rGene}
 \title{Random gene selector}
 \usage{
-rGene(id, seed = 20211017, randomRow = F)
+rGene(
+  id,
+  seed = 20211017,
+  randomRow = F,
+  idTable = get("biol321Ids"),
+  df = get("humanGenes")
+)
 }
 \arguments{
-\item{id}{a length 1 character vector of your ID (should match a value in biol321Ids)}
+\item{id}{A length 1 character vector of your ID (should match a value in biol321Ids)}
 
-\item{seed}{a length 1 numeric vector used to set pseudo-random assignments. This seed set per semester; do not change unless instructed to do so.}
+\item{seed}{A length 1 numeric vector used to set pseudo-random assignments. This seed set per semester; do not change unless instructed to do so.}
 
-\item{randomRow}{a length one logical vector. Only change this value if your Id is not in the biol321Ids object for some reason.}
+\item{randomRow}{A length one logical vector. Only change this value if your Id is not in the biol321Ids object for some reason.}
+
+\item{idTable}{A table of course IDs created 1 per semester. Do not change.}
+
+\item{df}{A table of reviewed human genes downloaded from uniprot. Do not change.}
 }
 \value{
-
+The random humanGene row that was selected based on your ID
 }
 \description{
 Random gene selector
 }
 \examples{
-assignedGene <- rGene("nbb624")
-print(assignedGene[,1:4])
+# Typical use
+rGene("nbb624")
 }
