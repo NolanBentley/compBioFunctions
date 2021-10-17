@@ -2,3 +2,5 @@
 ^compBioFunctions\.Rproj$
 ^packageCreationNotes\.Rmd$
 ^packageCreationNotes\.html$
+^\.Rproj\.user$
+^data-raw$
