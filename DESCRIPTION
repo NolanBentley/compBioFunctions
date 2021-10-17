@@ -1,15 +1,12 @@
 Package: compBioFunctions
-Title: What the Package Does (One Line, Title Case)
+Title: Creates Functions for Nolan's Comp. Bio. Course
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Nolan", "Bentley", , "NolanBentley@utexas.edu", role = c("aut", "cre"))
+Description: This package loads functions for use in Nolan Bentley's
+    Computational Biology Course and makes certain datasets available.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-URL: https://github.com/NolanBentley/compBioFunctions
-BugReports: https://github.com/NolanBentley/compBioFunctions/issues
