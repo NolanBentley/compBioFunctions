@@ -77,13 +77,28 @@ usethis::use_description(descOptions)
 print(readLines("DESCRIPTION"))
 ```
 
-This file causes a note to appear in the checking.
+This Rmd file causes a note to appear in the checking.
 
 ```{r addThisRmdToRBuildIgnore}
 addedToBuildIgnore <- c('LICENSE.md',
                         'compBioFunctions.Rproj',
                         'packageCreationNotes.html','packageCreationNotes.Rmd')
 usethis::use_build_ignore(addedToBuildIgnore)
+```
+
+I wanted to add some data that gets loaded
+
+```{r addData, eval=F}
+file.create("R/data.R")
+usethis::use_data_raw("biol321Ids")
+usethis::use_data_raw("humanGenes")
+
+library("sinew")
+write(sinew::makeOxygen(biol321Ids, add_fields = "source"),
+      "R/data.R",append = T)
+write(sinew::makeOxygen(humanGenes, add_fields = "source"),
+      "R/data.R",append = T)
+
 ```
 
 I ran the following several times and added more stuff to the above until it no longer produced errors.
