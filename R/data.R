@@ -5,6 +5,7 @@
 #'   \item{\code{SIS.ID}}{character Course Ids}
 #'}
 #' @source \url{https://utexas.instructure.com/courses/1322979}
+#' @export
 "biol321Ids"
 #' @title Reviewed human genes on Uniprot
 #' @description An unfiltered data.frame of the reviewed genes present on Unitprot as of 10/17/2021
@@ -70,4 +71,5 @@
 #'   \item{\code{Subunit.structure.[CC]}}{character COLUMN_DESCRIPTION}
 #'}
 #' @source \url{http://somewhere.important.com/}
+ #' @export
 "humanGenes"
