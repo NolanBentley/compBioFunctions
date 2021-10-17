@@ -1,0 +1,37 @@
+---
+title: "notesOnPackageCreation"
+author: "Nolan"
+date: "10/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Created a directory and created a package directory
+
+```{r intitialPackageDevelopment, eval = F}
+library("devtools")
+library("roxygen2")
+library("tidyverse")
+library("fs")
+library("usethis")
+
+wd <- "Q:/Teaching/Computational Biology/Git"
+pn <- "compBioFunctions"
+dir.create(wd, showWarnings = F)
+setwd(wd)
+create_package(pn)
+```
+
+This started a new rstudio session according to my rstudio setting. The working directory was set to inside the pn directory nested inside the wd directory
+
+My next step was to initialize github. An excellent guide for setting up github in R can be found at <https://kbroman.org/github_tutorial/>
+
+```{r inititalizeGit, eval=F}
+require(usethis)
+usethis::use_github()
+```
+
+I then created a new R script file in the R directory named idToNumber.R, added a function, in R-studio went to "Code-\>Insert Roxygen Skeleton", and filled out text next to the parameters.
