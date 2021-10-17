@@ -4,10 +4,10 @@
 #' @param matchTable a character vector with all characters present in id
 #' @param formatWidth a length 1 integer vector used to justify idMatch.
 #'
-#' @return
+#' @return a named numeric vector of the input characters converted to the concatenated matching position within matchTable
 #' @export
 #'
-#' @examples
+#' @examples idToNumber("nbb624")
 idToNumber <- function(id,
                        matchTable  = c(letters, LETTERS, 0:9),
                        formatWidth = nchar(length(matchTable))) {
