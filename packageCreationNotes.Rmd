@@ -96,9 +96,8 @@ usethis::use_data_raw("humanGenes")
 library("sinew")
 write(sinew::makeOxygen(biol321Ids, add_fields = "source"),
       "R/data.R",append = T)
-write(sinew::makeOxygen(humanGenes, add_fields = "source"),
+write(sinew::makeOxygen(biol321Ids, add_fields = "source"),
       "R/data.R",append = T)
-
 ```
 
 I ran the following several times and added more stuff to the above until it no longer produced errors.
