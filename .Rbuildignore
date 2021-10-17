@@ -1,2 +1,4 @@
+^LICENSE\.md$
 ^compBioFunctions\.Rproj$
-^\.Rproj\.user$
+^packageCreationNotes\.Rmd$
+^packageCreationNotes\.html$
