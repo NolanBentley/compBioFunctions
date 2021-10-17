@@ -5,11 +5,13 @@ date: "10/17/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=T}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Created a directory and created a package directory
+# Setup of package
+
+Created a directory and created a package directory
 
 ```{r intitialPackageDevelopment, eval = F}
 library("devtools")
@@ -34,4 +36,61 @@ require(usethis)
 usethis::use_github()
 ```
 
+# Editing package
+
 I then created a new R script file in the R directory named idToNumber.R, added a function, in R-studio went to "Code-\>Insert Roxygen Skeleton", and filled out text next to the parameters.
+
+I then created this document and did my initial commitment if it:
+
+-   I opened the git pane.
+
+-   I marvelled for a second at the meta-ness of typing out what I was doing as I did it.
+
+-   I then typed the rest of this based on what i planned to do.
+
+    -   I clicked commit.
+
+    -   I "staged" this Rmd file.
+
+    -   Typed my initial commit message in the box and accepted the changes.
+
+-   Clicked "push" (up-arrow).
+
+Next I tried out installing from github in a different rstudio session (because I wasn't sure what would happen from inside the package session).
+
+Okay, lets do some of this documentation stuff.
+
+```{r setLicense, eval = F}
+#Add the MIT license
+usethis::use_mit_license()
+```
+
+```{r setDescription, eval = T}
+#Edit the description file
+descOptions <- list(
+    Title = "Creates Functions for Nolan's Comp. Bio. Course",
+    `Authors@R` = 'person("Nolan", "Bentley", email = "NolanBentley@utexas.edu", role = c("aut","cre","mai"))',
+    Description = "This package loads functions for use in Nolan Bentley's Computational Biology Course and makes certain datasets available.",
+    License = "MIT + file LICENSE"
+)
+usethis::use_description(descOptions)
+print(readLines("DESCRIPTION"))
+```
+
+This file causes a note to appear in the checking.
+
+```{r addThisRmdToRBuildIgnore}
+addedToBuildIgnore <- c('LICENSE.md',
+                        'compBioFunctions.Rproj',
+                        'packageCreationNotes.html','packageCreationNotes.Rmd')
+usethis::use_build_ignore(addedToBuildIgnore)
+```
+
+I ran the following several times and added more stuff to the above until it no longer produced errors.
+
+```{r rerunDocumentationAndCheck, error = T}
+devtools::document()
+devtools::check()
+```
+
+I now had done all my initial steps, so I then saved this, knit an html version, and committed the changes to files.
