@@ -84,6 +84,8 @@ addedToBuildIgnore <- c('LICENSE.md',
                         'compBioFunctions.Rproj',
                         'packageCreationNotes.html','packageCreationNotes.Rmd')
 usethis::use_build_ignore(addedToBuildIgnore)
+#The following was a chance discovery that sounds like a good idea
+usethis::git_vaccinate()
 ```
 
 I wanted to add some data that gets loaded
