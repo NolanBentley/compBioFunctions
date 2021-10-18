@@ -20,9 +20,15 @@ rGene <- function(id,
     idTable <- get("biol321Ids")
     df      <- get("humanGenes")
 
+    #Establish controlled values
+    instructorsGene <- "Q15848"
+    if (!instructorsGene %in% df$Entry) {
+        stop("instructors's gene missing.")
+    }
 
     #Find matching ID
     row <- match(id, idTable[, 1])
+
     #Overide match if randomRow
     if (randomRow) {
         row <- sample(1:nrow(df),1)
@@ -36,8 +42,17 @@ rGene <- function(id,
         length(seed) != 1) {
         stop("seed needs to be a length 1 numeric vector")
     }
-    #Set seed and isolate current row
+    #Set seed and sample rows
     set.seed(seed)
-    currRow <- sample(1:nrow(df), size = nrow(df), replace = F)[row]
-    return(df[currRow,])
+    rowSample <- sample(1:nrow(df), size = nrow(df), replace = F)
+
+    #Set instructors as instructorsGene
+    instructorsRow  <- which(idTable[, 1] == "nbb624")
+    iGeneRow        <- which(rowSample == which(df$Entry == instructorsGene))
+    instructorsVal <- rowSample[instructorsRow]
+    switchedVal    <- rowSample[iGeneRow]
+    rowSample[instructorsRow] <- switchedVal
+    rowSample[iGeneRow      ] <- instructorsVal
+
+    return(df[rowSample[row],])
 }
