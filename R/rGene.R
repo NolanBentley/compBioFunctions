@@ -2,8 +2,6 @@
 #'
 #' @param id A length 1 character vector of your ID (should match a value in biol321Ids)
 #' @param seed A length 1 numeric vector used to set pseudo-random assignments. This seed set per semester; do not change unless instructed to do so.
-#' @param idTable A table of course IDs created 1 per semester. Do not change.
-#' @param df A table of reviewed human genes downloaded from uniprot. Do not change.
 #' @param randomRow A length one logical vector. Only change this value if your Id is not in the biol321Ids object for some reason.
 #'
 #' @return The random humanGene row that was selected based on your ID
@@ -14,15 +12,14 @@
 
 rGene <- function(id,
                   seed = 20211017,
-                  randomRow = F,
-                  idTable = get("biol321Ids"),
-                  df      = get("humanGenes")
+                  randomRow = F
                   ) {
     #Load data
-    #utils::data("biol321Ids", envir = environment())
-    #utils::data("humanGenes", envir = environment())
-    #idTable <- get("biol321Ids")
-    #df      <- get("humanGenes")
+    utils::data("biol321Ids", envir = environment())
+    utils::data("humanGenes", envir = environment())
+    idTable <- get("biol321Ids")
+    df      <- get("humanGenes")
+
 
     #Find matching ID
     row <- match(id, idTable[, 1])
