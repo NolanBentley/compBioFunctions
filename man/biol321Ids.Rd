@@ -3,20 +3,31 @@
 \docType{data}
 \name{biol321Ids}
 \alias{biol321Ids}
-\title{Biol321 Course Ids}
+\title{DATASET_TITLE}
 \format{
-A data frame with 30 rows and 1 variables:
+A data frame with 140 rows and 1 variables:
 \describe{
-\item{\code{SIS.ID}}{character Course Ids}
+\item{\code{SIS.ID}}{character COLUMN_DESCRIPTION}
+}
+
+A data frame with 140 rows and 1 variables:
+\describe{
+\item{\code{SIS.ID}}{character COLUMN_DESCRIPTION}
 }
 }
 \source{
-\url{https://utexas.instructure.com/courses/1322979}
+\url{http://somewhere.important.com/}
+
+\url{http://somewhere.important.com/}
 }
 \usage{
 biol321Ids
+
+biol321Ids
 }
 \description{
-Current Biol321G Id's as of Fall 2021
+DATASET_DESCRIPTION
+
+DATASET_DESCRIPTION
 }
 \keyword{datasets}
