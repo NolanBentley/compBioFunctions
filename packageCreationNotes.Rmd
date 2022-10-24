@@ -20,10 +20,7 @@ library("tidyverse")
 library("fs")
 library("usethis")
 
-wd <- "Q:/Teaching/Computational Biology/Git"
 pn <- "compBioFunctions"
-dir.create(wd, showWarnings = F)
-setwd(wd)
 create_package(pn)
 ```
 
@@ -44,7 +41,7 @@ I then created this document and did my initial commitment if it:
 
 -   I opened the git pane.
 
--   I marvelled for a second at the meta-ness of typing out what I was doing as I did it.
+-   I marveled for a second at the meta-ness of typing out what I was doing as I did it.
 
 -   I then typed the rest of this based on what i planned to do.
 
@@ -61,7 +58,7 @@ Next I tried out installing from github in a different rstudio session (because 
 Okay, lets do some of this documentation stuff.
 
 ```{r setLicense, eval = F}
-#Add the MIT license
+#Add the MIT license (https://snyk.io/learn/what-is-mit-license/)
 usethis::use_mit_license()
 ```
 
